@@ -1,5 +1,4 @@
 var routes = require('express').Router();
-var bcrypt = require('bcryptjs');
 var MongoClient=require('mongodb').MongoClient;
 var bodyparser=require('body-parser');
 var urlencoded=bodyparser.urlencoded({extended:true});
@@ -65,10 +64,9 @@ routes.post('/signup',urlencoded,function(req,res){
     var c=req.body.mobile;
     var e=req.body.password;
     console.log(a);
-    bcrypt.hash(e, 10, function(err, hash) {
-        var newpwd = hash;
+        var newpwd = e;
         details={
-            name:a,email:b,mobile:c,passwd:newpwd,profile:"",hashtags:[],skills:[],bio:""
+            name:a,email:b,mobile:c,passwd:e,profile:"",hashtags:[],skills:[],bio:""
         };
             MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
             if(err) throw err;
@@ -97,7 +95,6 @@ routes.post('/signup',urlencoded,function(req,res){
                 }
             });
         });
-    });
 })
 
 routes.post('/login',urlencoded,function(req,res){
@@ -110,8 +107,7 @@ routes.post('/login',urlencoded,function(req,res){
             db.collection("users").findOne(q, function(err, result) {
                 if(result){
                     var hash = result.passwd;
-                    bcrypt.compare(b, hash, function(err, res1) {
-                        if(res1) {
+                        if(hash == b) {
                                 var hashtags = result.hashtags;
                                 var email = result.email;
                                 var name = result.name;
@@ -140,7 +136,6 @@ routes.post('/login',urlencoded,function(req,res){
                         else {
                             res.send("IncorrectPassword");
                         } 
-                    }); 
                 }
                 else{
                     res.send("NotRegistered");
