@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Signup</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="css/signup.css" type="text/css">
+        </head>
+        <body>
+            <div class="row h-100">
+                <div class="col-sm-12 my-auto">
+                <div class="row main">
+                    <div class="col-lg-6 firstdiv d-flex justify-content-center align-items-center" style="background-color: white;">
+                            <div class="container">
+                                <p class="stext">SIGN UP</p>
+                                <br/>
+                                <p class="tag">OUR WEBISTE IS MUCH COOL<br/>WHEN YOU HAVE AN ACCOUNT</p>
+                                <br/>
+                                <img src="images/learney.png" class="symbol" alt="logo" height="180px">
+                            </div>
+                    </div>
+                    <div class="col-lg-6 seconddiv">
+                        <div class="container formcontainer">
+                            <br/>
+                            <h3>Welcome to TitleHere</h3>
+                            <p>Let's get you all set up!</p>
+                            <br/>
+                            <p>Already have an account? <a href="loginpage"><span class="login">Log in.</span></a></p>
+                            <form action="signup" method="POST">
+                                <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label for="fname">First Name</label>
+                                    <input class="form-control" type="text" placeholder="Peter" name="fname" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="lname">Last Name</label>
+                                    <input class="form-control" type="text" placeholder="Deltondo" name="lname" required>
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                    <label for="phone">Phone</label>
+                                    <input class="form-control" type="number" placeholder="9498675309" name="mobile" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <label for="email">Email</label>
+                                    <input class="form-control" type="text" placeholder="pdeltondo@gmail.com" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                    <label for="passwd">Password</label>
+                                    <input class="form-control" type="password" placeholder="Password" name="password" required>
+                                    </div>
+                                    <div class="col">
+                                    <label for="cpasswd">Confirm Password</label>
+                                    <input class="form-control" type="password" placeholder="ConfirmPassword" required>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" required>
+                                    <label class="form-check-label" for="Check2">I agree to the<span class="agree"> Terms, Privacy Policy and Fees.</span></label>
+                                </div><br/>
+                                <button class="signup">Sign Up</button><br/><br/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </body>
+    </html>

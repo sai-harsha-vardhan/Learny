@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="/css/profile.css">
+            <link rel="stylesheet" type="text/css" href="/css/poststyle.css">
+            <script>
+                function goback(){
+                    history.back();
+                }
+            </script>
+            <title>Profile</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="#"><img src="/images/learneys.png" alt="logo" style="width:60px;"> &nbsp<b>LEARNEY</b></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                    <ul class="navbar-nav links">
+                        <li class="nav-item links">
+                            <a class="nav-link" href="#" onclick="goback();">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item active links">
+                        <a class="nav-link" href="#"> Profile</a>
+                      </li>
+                      <li class="nav-item links">
+                        <a class="nav-link" href="/">Logout</a>
+                      </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="search" placeholder="Search for anything" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+              </nav>
+            <div class="card mainy">
+                <div class="card-header content">
+                    <div class="row">
+                        <div class="col">
+                            <h6><%= details.name %></h3>
+                            <p class="opac"><%= details.email %></p>
+                            <p class="opac"><%= details.mobile %></p>
+                        </div>
+                        <div class="col">
+                            <img class="topimg" src="/images/blank.jpg" alt="Card image">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h6>About</h3>
+                            <p><span class="opac"><%= details.bio %></p>
+                        </div>
+                        <div class="col">
+                            <div class="d-flex flex-row-reverse">
+                                <div class="p-2"><i class="fa fa-phone phone" aria-hidden="true"></i></div>
+                                <div class="p-2"><i class="fa fa-comment-o" aria-hidden="true"></i></div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p><span>Skills </span><span class="badge badge-secondary"><i class="fa fa-star" style="font-size: 13px;"></i></span></p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><%= details.skills[0] %></li>
+                                <li class="list-group-item"><%= details.skills[1] %></li>
+                                <li class="list-group-item"><%= details.skills[2] %></li>
+                              </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p><span >Experience</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Worked at google as SDE</li>
+                                <li class="list-group-item">Web Intern at Microsoft</li>
+                              </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-center content">
+                    <a href="#" class="btn btn-light backw">Like profile</a>
+                    <a href="#" class="btn btn-primary backg">Contact</a>
+                </div>
+            </div>
+        </body>
+    </html>

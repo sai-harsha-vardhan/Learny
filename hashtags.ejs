@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/hash.css" type="text/css">
+        <title>Hashtags</title>
+        <script>
+            var hashtags = [];
+            function add(h){
+                hashtags.push(h);
+                document.getElementById(h).style.backgroundColor = "#f2f2f2";
+            }
+            function submithashtags(){
+                document.getElementById("val").value = hashtags;
+                document.getElementById("val1").value = '<%= details.email %>';
+                document.getElementById("val2").value = '<%= details.name %>';
+                document.getElementById("insert").submit();
+            }
+        </script>
+    </head>
+        <body>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Choose the hashtags you cherish!</h5>
+                    <a href="#" class="btn btn-primary" onclick="submithashtags();">Submit</a>
+                </div>
+            </div>
+            <br/>
+            <form action="inserthash" method="POST" id="insert">
+                <input type="text" name="hashes" id="val" hidden>
+                <input type="text" name="user" id="val1" hidden>
+                <input type="text" name="name" id="val2" hidden>
+            </form>
+            <% hashtags.forEach(function(hashtag){ %>
+            <div class="card text-center crdy"  id="<%= hashtag %>">
+                <div class="card-body">
+                  <h5 class="card-text selectors" onclick="add('<%= hashtag %>')">#<%= hashtag %></h5>
+                </div>
+            </div>
+            <% }); %>
+        </body>
+    </html>

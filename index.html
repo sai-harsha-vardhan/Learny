@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <title>Welcome</title>
+    <script>
+      var text = ["Are you searching for a Best Place to find a teacher for any of you interests?<br/>Or trying to find a easy way of Teaching?<br/>You are on the right path. Register and know much about it!","","You can find source code in our git hub repo. Give it a star!<br/><a href='https://github.com/SAI-HARSHA-VARDHAN' style='color:white;'>https://github.com/SAI-HARSHA-VARDHAN</a>"];
+      var images = ["images/learney.png","","images/codify.png"];
+      function home(){
+        document.getElementById("text").innerHTML = text[0];
+        document.getElementById("image").src = images[0];
+        document.getElementById("image").style.height="180px";
+        document.getElementById("image").style.width="300px";
+        $("#text").hide().fadeIn(1200);
+        $("#image").hide().fadeIn(1200);
+      }
+      function features(){
+        
+      }
+      function code(){
+        document.getElementById("text").innerHTML = text[2];
+        document.getElementById("image").src = images[2];
+        document.getElementById("image").style.height="350px";
+        document.getElementById("image").style.width="400px";
+        $("#text").hide().fadeIn(1200);
+        $("#image").hide().fadeIn(1200);
+      }
+      function contact(){
+        
+      }
+    </script>
+</head>
+<body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark top">
+          <a class="navbar-brand" href="#"><img src="images/learneys.png" alt="logo" style="width:60px;"> <b class="learny">LEARNEY</b></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="signuppage"><button class="btns" style="border: none;">Signup</button></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link lgnbtn" href="loginpage"><button class="btns" id="lgnbtn" style="border: none;">Login</button></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="container-fluid">
+          <div class="row">
+        <div class="col-2">
+            <nav class="nav navbar-light" id="fourth">
+                    <a href="#" class="nav-link active special" onclick="home();"><i class="fa fa-home" id="menu2"></i></a>
+                    <a href="#" class="nav-link special" onclick="features();"><i class="fa fa-bullseye" aria-hidden="true" id="menu2"></i></a>
+                    <a href="#" class="nav-link special" onclick="code();"><i class="fa fa-code" aria-hidden="true" id="menu2"></i></a>
+                    <a href="#" class="nav-link special" onclick="contact();"><i class="fa fa-address-book" aria-hidden="true" id="menu2"></i></a>
+            </nav>
+        </div> 
+        <div class="col-10">
+          <div class="row content">
+            <div class="col-sm-4  d-flex  align-items-center">
+              <img class="img-fluid" src="images/learney.png" id="image" height="250px" width="300px">
+            </div>
+            <div class="col-sm-8 d-flex align-items-center">
+              <h2 id="text">Are you searching for a Best Place to find a teacher for any of you interests?<br/>Or trying to find a easy way of Teaching?<br/>You are on the right path. Register and know much about it!</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

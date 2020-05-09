@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Post</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <meta name="google-signin-client_id" content="866621071063-cnfbpd5fm98bs11ekb4qha0mt8nmn2np.apps.googleusercontent.com">
+            <style>
+                body{
+                    /* background-color:#6441A5; */
+                }
+                #content{
+                    text-align: center;
+                    margin-top: 3%;
+                }
+                #arrow{
+                    color:black;
+                    font-size: 30px;
+                    position: relative;
+                    right: 15%;
+                    cursor: pointer;
+                }
+                ::placeholder{
+                    opacity: 1;
+                    padding:5px;
+                    color: black;
+                }
+                #sel1{
+                    color: orangered;
+                    border: 1px solid black;
+                    /* background-color: #6441A5; */
+                    color: gold;
+                    padding-left:12px;
+                }
+                select,input{
+                    width:100%;
+                    border-radius: 5px;
+                    border:1px solid black;
+                    height:45px;
+                    margin-top: 15px;
+                    /* background-color: #6441A5; */
+                    padding:5px;
+                    color: white;
+                    padding-left: 12px;
+                }
+                textarea{
+                    width:100%;
+                    border-radius: 5px;
+                    border:1px solid black;
+                    margin-top: 15px;
+                    /* background-color: #6441A5; */
+                    padding:5px;
+                    color:black;
+                    padding-left: 12px;
+                }
+                #head{
+                    color:black;
+                    font-family:georgia;
+                }
+                #sub{
+                    text-align: center;
+                    width:100px;
+                    background-color:#1E90FF ;
+                    color:white;
+                    border-radius:25px;
+                    height:38px;
+                    float:right;
+                    padding: 5px;
+                }
+                #mod{
+                    display:none;
+                }
+            </style>
+            <script>
+                function goback(){
+                    history.back();
+                }
+            </script>
+        </head>
+        <body>
+            <div class="container" id="content">
+                <br/><br/>
+                <h1 id="head"><i class="fa fa-arrow-left" id="arrow" onclick="goback()"></i>Post Story</h1><br/><br/><br/><br/>
+                <form  action="../postdb" enctype="multipart/form-data"  method="POST">
+                    <input type="file" name="myImage" required><br/>
+                    <input type="hidden" value="<%= email %>" id="user" name="user">
+                    <input type="hidden" value="<%= name %>" id="username" name="username">
+                    <textarea rows="4"  placeholder="Caption" id="caption" name="caption" required></textarea>
+                    <br/>
+                    <br/>
+                    <input type="submit" align="right" id="sub" value="Post Story">
+                </form>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="mod">
+                  </button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Successfully Posted</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <img src="/images/success.png" height="200px" width="150px">
+                        </div>
+                        <div class="modal-footer">
+                            <a href="javascript:history.go(-2)"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <script>
+                var a = <%= p %>;
+                    if(a == 1){
+                        document.getElementById("mod").click(); 
+                    }
+            </script>
+        </body>
+    </html>

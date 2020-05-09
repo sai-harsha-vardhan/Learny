@@ -1,0 +1,68 @@
+body{
+    background-image: linear-gradient(to right, #f48aff, #c771ed, #985bda, #6347c6, #0e35b2);
+    height: 100vh;
+    padding: 7vh;
+    padding-top:7vh;
+}
+.seconddiv{
+    background-color: white;
+    padding: 2vh;
+}
+.btn{
+    color:orange ;
+}
+.login{
+    color: #4f74ea;
+    font-weight: bold;
+}
+.agree{
+    color:#4f74ea;
+}
+.signup{
+    background-color: #088AB5;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+.logo{
+    height: 50px;
+    margin: 5px;
+}
+.symbol{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.stext{
+    /* color: white; */
+    font-size: 3em;
+    font-style: italic;
+    text-align: center;
+}
+.tag{
+    text-align: center;
+    color: rgb(165, 164, 164);
+    font-size: 1.2em;
+}
+@media only screen and (max-width: 991px) {
+    body{
+        padding: 0px;
+    }
+    .firstdiv{
+        height: 100vh;
+    }
+    .logo{
+        margin: 15px;
+    }
+}
+@media only screen  and (min-width : 1440px) {
+    .seconddiv{
+        height: 87vh;
+    }
+    .firstdiv{
+        height: 87vh;
+    }
+}

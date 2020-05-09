@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Posts</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <link rel="stylesheet" href="css/poststyle.css" type="text/css">
+            <script>
+                $(document).ready(function() {
+                $('.hideme').first().animate({'opacity':'1'},500);
+                $(window).scroll( function(){
+                    $('.hideme').each( function(i){     
+                        var bottom_of_object = $(this).offset().top + $(this).outerHeight()/4;
+                        var bottom_of_window = $(window).scrollTop() + $(window).height();
+                        if( bottom_of_window > bottom_of_object ){
+                            $(this).animate({'opacity':'1'},500);
+                        }
+                    }); 
+                });
+            });
+            </script>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="#"><img src="images/learneys.png" alt="logo" style="width:60px;"> &nbsp<b>LEARNEY</b></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                    <ul class="navbar-nav links">
+                        <li class="nav-item active links">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item links">
+                        <a class="nav-link" href="profile?email=<%= email %>"> Profile</a>
+                      </li>
+                      <li class="nav-item links">
+                        <a class="nav-link" href="/">Logout</a>
+                      </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="search" placeholder="Search for anything" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+              </nav>
+            <div class="container-fluid stories">
+                <div class="card text-center" style="background-color: #f2f2f2;">
+                    <div class="card-body">
+                      <h5 class="card-title">Hello <%= name %>!</h5>
+                      <p class="card-text">Want to share something with world?</p>
+                      <a href="/postview/?email=<%= email %>&name=<%= name %>" class="btn btn-primary">Create new post</a>
+                    </div>
+                  </div>
+                <% posts.forEach(function(post){ %>
+                <div class="row hideme">
+                    <div class="container-fluid storycontainer">
+                        <h6 class="head"><span><img src="images/blank.jpg" height="30px" width="30px"></span> &nbsp&nbsp<a href="profile/?email=<%= post.user %>"><%= post.username %></a></h6>
+                        <img src="<%= post.src %>" class="img-fluid story"> 
+                        <div class="row bnav"  style="margin: auto">
+                            <div class="col">
+                                <p class="bottom">&nbsp&nbsp<i class="fa fa-heart-o" style="font-weight: bold;"></i> <%= post.likes %>&nbsp&nbsp&nbsp&nbsp <i class="fa fa-comment-o" style="font-weight: bold;"></i> <%= post.comments.length %></p>
+                            </div>
+                            <div class="col">
+                                <p class="bottom1">SHARE&nbsp&nbsp</p>
+                            </div>
+                        </div>
+                        <p class="caption"><b><%= post.username %></b> <%= post.caption %></p>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </body>
+    </html>
+    

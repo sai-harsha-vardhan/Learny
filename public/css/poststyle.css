@@ -1,0 +1,61 @@
+body{
+    padding-top: 70px;
+}
+.story{
+    width: 100vw;
+    height: 70vh;
+}
+.storycontainer{
+    width: 90vw;
+    margin-top: 2vh;
+    padding: 0px !important;
+    border: 0.4px solid rgb(184, 183, 183);
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+.bottom{
+    font-size: 17px !important;
+    padding-top: 10px;
+    color: #2699FB;
+}
+.head{
+    padding-left: 10px;
+    margin-bottom: 13px;
+    margin-top: 10px;
+}
+.caption{
+    padding-left: 10px;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+.hideme
+{
+    opacity:0;
+}
+.bnav{
+    background-color: #BCE0FD;
+}
+a{
+    color: black;
+}
+.bottom1{
+    text-align: right;font-size: 17px !important;
+    padding-top: 10px;
+    color: #2699FB;
+    margin-bottom: 5px;
+}
+.links{
+    margin-right: 3vw;
+}
+@media only screen  and (min-width : 1440px) {
+    .story{
+        width: 30vw;
+        height: 75vh;
+    }
+    .storycontainer{
+        width: 30vw;
+    }
+    .bottom{
+        font-size: 25px;
+    }
+}

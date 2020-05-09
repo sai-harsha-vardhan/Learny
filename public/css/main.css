@@ -1,0 +1,102 @@
+body{
+    background-image: linear-gradient(to right, #f48aff, #c771ed, #985bda, #6347c6, #0e35b2);
+}
+.btns{
+    
+    : 1px solid black;
+    border-radius: 25px;
+    width: 100px;
+    padding: 6px;
+    color: #66A9E6;
+    font-weight: bold;
+}
+.learny{
+    font-size: x-large;
+}
+.top{
+    height: 10vh;
+}
+.navbar-light{
+    background-color: white !important;
+    width:90px;
+    margin-top: 0px;
+    height:90vh;
+    margin-left:-20px;
+}
+body{
+    margin: 0 auto;
+}
+.special{
+    color:black !important;
+    font-size:4vh; 
+    margin: auto;   
+}
+body{
+    background-color:  #ffa366;
+}
+#apps{
+    color: blue !important;
+}
+#menu{
+    color: white !important;
+    background-color: blue !important;
+    border-radius: 50px;
+    padding:8px;
+}
+#menu1{
+    color: white !important;
+    background-color: orange !important;
+    border-radius: 50px;
+    padding:8px;
+}
+#bottom{
+    margin-top: 100px;
+}
+#bottom1{
+    margin-top: 150px;
+}
+#bottom2{
+    margin-top: 180px;
+}
+#second {
+    margin-top:10vh;
+}
+#chome{
+    color:orange !important;
+}
+#person{
+    background-color: black;
+    color:white;
+    padding:5px;
+    border-radius: 50px;
+}
+#menu1,#menu2{
+    background-position: center;
+    transition: background 0.8s;
+}
+#menu1:hover,#menu2:hover{
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+#menu2{
+    background-color: white !important;
+    border-radius: 50px;
+    padding:8px;
+}
+#menu2:active ,#menu1:active{
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 0s;
+}
+.content{
+    height: 90vh;
+}
+#text{
+    font-family: Footlight MT;
+    color: white;
+    opacity: 0.8;
+}
+@media only screen  and (min-width : 1440px) {
+    #lgnbtn{
+        margin-right: 10vw;
+    }
+}

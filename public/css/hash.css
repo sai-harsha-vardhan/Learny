@@ -1,0 +1,10 @@
+.selectors{
+    cursor: pointer;
+}
+.crdy{
+    width: max-content;
+    border-radius: 10px;
+    display: inline-block;
+    margin-left: 5vw;
+    margin-bottom: 5vh;
+}
